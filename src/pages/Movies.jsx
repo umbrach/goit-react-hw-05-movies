@@ -12,7 +12,7 @@ export default function Movies() {
   const query = searchParams.get('query') ?? '';
 
   useEffect(() => {
-    async function movieSearching() {
+    async function searchMovie() {
       if (query === '') {
         return;
       }
@@ -22,7 +22,7 @@ export default function Movies() {
         setMoviesData(data.results);
       } catch (error) {}
     }
-    movieSearching();
+    searchMovie();
   }, [query]);
 
   const formData = data => {

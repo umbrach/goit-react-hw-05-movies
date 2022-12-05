@@ -1,18 +1,17 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getReviews } from '../../services/movie-api';
+import { getMovieReviews } from '../../services/movie-api';
 
 export default function Reviews() {
   const { movieId } = useParams();
   const [rewData, setRewData] = useState(null);
-
   useEffect(() => {
     if (!movieId) {
       return;
     }
     async function getReviews() {
       try {
-        const { data } = await getReviews(movieId);
+        const { data } = await getMovieReviews(movieId);
 
         setRewData(data.results);
       } catch (error) {
@@ -25,7 +24,6 @@ export default function Reviews() {
   if (!rewData) {
     return;
   }
-  
   return (
     <>
       {rewData.length > 0 ? (
