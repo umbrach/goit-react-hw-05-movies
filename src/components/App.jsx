@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
 
 const Layout = lazy(() => import('./Layout/Layout.jsx'));
-const Home = lazy(() => import('../pages/HomePage.jsx'));
+const Home = lazy(() => import('../pages/Home.jsx'));
 const Movies = lazy(() => import('../pages/Movies.jsx'));
 const MovieDetails = lazy(() => import('../pages/MovieDetails'));
 const Cast = lazy(() => import('./Cast/Cast'));
@@ -18,13 +18,14 @@ export const App = () => {
             style={{
               display: 'flex',
               justifyContent: 'center',
-              marginTop: '500px',
-              fontSize: '25px',
+              marginTop: '300px',
+              fontFamily: 'Montserrat',
+              fontSize: '32px',
               fontWeight: '600',
-              color: 'red',
+              color: 'grey',
             }}
           >
-            Loading
+            Please wait...
           </div>
         }
       >

@@ -7,7 +7,7 @@ export function ReturnButton() {
   return (
     <button className={s.goBackBtn}>
       <Link className={s.GoBackLink} to={location.state?.from ?? '/Home'}>
-        Go back
+        Return
       </Link>
     </button>
   );

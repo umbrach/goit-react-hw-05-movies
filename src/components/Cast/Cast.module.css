@@ -4,6 +4,8 @@
     grid-gap: 30px;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(150px, 1fr));
+
+    font-family: 'montserrat';
 }
 
 .CastItem {

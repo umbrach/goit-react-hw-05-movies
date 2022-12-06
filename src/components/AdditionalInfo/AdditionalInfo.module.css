@@ -1,6 +1,7 @@
 .additionalWrap {
     padding: 10px 150px;
     border: 1px solid grey;
+
 }
 
 .additionalLink {
@@ -15,5 +16,5 @@
 }   
 
 .additionalLink:hover {
-    color: brown;
+    color: rgb(10, 92, 222);
 }

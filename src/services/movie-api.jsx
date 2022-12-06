@@ -1,11 +1,13 @@
 import axios from 'axios';
 
-export async function fetchTrandingFilms() {
-  const BASE_URL = 'https://api.themoviedb.org/3/trending/movie/day';
-  const API_KEY = 'api_key=ec03e9e57e4c2ad62d7d835cb4534f63';
-  return await axios.get(`${BASE_URL}?${API_KEY}`);
+const API_KEY = 'api_key=ec03e9e57e4c2ad62d7d835cb4534f63';
+
+export async function getPopularMovie() {
+    return await axios.get(
+    `https://api.themoviedb.org/3/trending/movie/day?${API_KEY}`
+  );
 }
-export async function movieSearching(searchQuery) {
+export async function searchMovies(searchQuery) {
   const BASE_URL = 'https://api.themoviedb.org/3/search/movie';
   const API_KEY = 'api_key=ec03e9e57e4c2ad62d7d835cb4534f63';
   return await axios.get(

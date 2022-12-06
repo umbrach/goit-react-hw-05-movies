@@ -4,7 +4,7 @@ import { getMovieReviews } from '../../services/movie-api';
 
 export default function Reviews() {
   const { movieId } = useParams();
-  const [rewData, setRewData] = useState(null);
+  const [reviewData, setReviewData] = useState(null);
   useEffect(() => {
     if (!movieId) {
       return;
@@ -13,7 +13,7 @@ export default function Reviews() {
       try {
         const { data } = await getMovieReviews(movieId);
 
-        setRewData(data.results);
+        setReviewData(data.results);
       } catch (error) {
         console.log(error);
       }
@@ -21,14 +21,14 @@ export default function Reviews() {
 
     getReviews();
   }, [movieId]);
-  if (!rewData) {
+  if (!reviewData) {
     return;
   }
   return (
     <>
-      {rewData.length > 0 ? (
+      {reviewData.length > 0 ? (
         <ul>
-          {rewData.map(({ id, author, content }) => {
+          {reviewData.map(({ id, author, content }) => {
             return (
               <li key={id}>
                 <h2>Author:{author} </h2>
@@ -40,7 +40,7 @@ export default function Reviews() {
       ) : (
         <div
           style={{
-            padding: '30px 50px',
+            padding: '40px 60px',
           }}
         >
           <p>We don't have any reviews for this movie.</p>

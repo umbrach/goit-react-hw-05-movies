@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { movieSearching } from '../services/movie-api';
+import { searchMovies } from '../services/movie-api';
 import { Searchbar } from '../components/SearchMovie/SearchMovie';
 import { MovieList } from '../components/MovieList/MovieList';
 import { MovieItem } from '../components/MovieList/MovieItem';
@@ -18,7 +18,7 @@ export default function Movies() {
       }
 
       try {
-        const { data } = await movieSearching(query);
+        const { data } = await searchMovies(query);
         setMoviesData(data.results);
       } catch (error) {}
     }
