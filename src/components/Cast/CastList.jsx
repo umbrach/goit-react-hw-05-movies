@@ -5,7 +5,8 @@ export function CastList({ actorName, character, actorPhoto }) {
   let src = `https://image.tmdb.org/t/p/original${actorPhoto}`;
 
   if (actorPhoto === null) {
-    src = 'https://cdn-icons-png.flaticon.com/512/4054/4054617.png';
+    src =
+      'https://thumbs.dreamstime.com/z/no-image-available-icon-photo-camera-flat-vector-illustration-132483296.jpg';
   }
 
   return (

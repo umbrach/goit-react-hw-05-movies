@@ -14,21 +14,19 @@ export async function searchMovies(searchQuery) {
 }
 
 export async function getMovieDetails(id) {
-  // const BASE_URL = 'https://api.themoviedb.org/3/movie/';
+
   return await axios.get(
     `https://api.themoviedb.org/3/movie/${id}?${API_KEY}&language=en-US`
   );
 }
 
 export async function getCastDetails(id) {
-  // const BASE_URL = 'https://api.themoviedb.org/3/movie/';
   return await axios.get(
     `https://api.themoviedb.org/3/movie/${id}/credits?${API_KEY}&language=en-US`
   );
 }
 
 export async function getMovieReviews(id) {
-  // const BASE_URL = 'https://api.themoviedb.org/3/movie/';
   return await axios.get(
     `https://api.themoviedb.org/3/movie/${id}/reviews?${API_KEY}&language=en-US`
   );
